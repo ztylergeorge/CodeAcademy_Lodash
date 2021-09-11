@@ -76,6 +76,34 @@ const _ = {
         else {
             return true;
         }
+    },
+
+    //swap object key value pairs
+    invert(object) {
+
+        const invertedObject = {};
+
+        for (let key in object) {
+
+            let originalValue = key;
+            invertedObject.originalValue = key;
+
+        }
+
+        return invertedObject;
+    },
+
+    //returns undefined or true if predicate functions exist
+    findKey(object, predicateFunction) {
+
+        for (let key in object) {
+            if (predicateFunction(object[key]) === true) {
+                return key;
+            }
+        }
+        
+        return undefined;
+
     }
 
 };
