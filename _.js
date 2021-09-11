@@ -115,6 +115,12 @@ const _ = {
         }
 
         return arr.slice(n);
+    },
+
+    //drop elements of an array as long as condition is true
+    dropWhile(array, predicateFunction) {
+        let i = array.findIndex((arr, index) => !(predicateFunction(arr, index, array)));
+        return this.drop(array, i);
     }
 
 };
