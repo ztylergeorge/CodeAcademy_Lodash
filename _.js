@@ -104,6 +104,17 @@ const _ = {
         
         return undefined;
 
+    },
+
+    //drop certain number of elements from beginning of array
+    drop(arr, n) {
+
+        //check if n is defined
+        if (n === undefined) {
+            n = 1;
+        }
+
+        return arr.slice(n);
     }
 
 };
