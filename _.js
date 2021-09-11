@@ -121,6 +121,24 @@ const _ = {
     dropWhile(array, predicateFunction) {
         let i = array.findIndex((arr, index) => !(predicateFunction(arr, index, array)));
         return this.drop(array, i);
+    },
+
+    //break up array into arrays of smaller chunks
+    chunk(array, size) {
+        
+        let chunks = [];
+
+        //check if size is undefined and if it is make it 1
+        if (size === undefined) {
+            size = 1;
+        }
+
+        for (let i = 0; i < array.length; i += size) {
+            let newArray = array.slice(i, i + size);
+            chunks.push(newArray);
+        }
+
+        return chunks;
     }
 
 };
