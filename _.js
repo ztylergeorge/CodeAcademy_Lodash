@@ -38,6 +38,33 @@ const _ = {
     //return array of words from text separated by a space
     words(text) {
         return text.split(" ");
+    },
+
+    //pad a string with spaces
+    pad(text, length) {
+
+        //if length is less than text length, return text
+        if (length <= text.length) {
+            return text;
+        }
+        //otherwise padd it
+        else {
+            let spacesNeeded = length - text.length;
+            let beginningSpaces = Math.floor(spacesNeeded / 2);
+            let endSpaces = spacesNeeded - beginningSpaces;
+            
+            //add spaces to beginning and end
+            while (beginningSpaces > 0) {
+                text = " " + text;
+                beginningSpaces--;
+            }
+            while (endSpaces > 0) {
+                text = text + " ";
+                endSpaces--;
+            }
+            
+            return text;
+        }
     }
 
 };
