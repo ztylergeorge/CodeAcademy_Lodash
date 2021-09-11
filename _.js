@@ -62,8 +62,19 @@ const _ = {
                 text = text + " ";
                 endSpaces--;
             }
-            
+
             return text;
+        }
+    },
+
+    //return if the value of a key is undefined or not 
+    has(obj, key) {
+
+        if (obj[key] === undefined) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
 
