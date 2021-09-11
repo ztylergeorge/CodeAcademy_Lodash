@@ -24,11 +24,8 @@ const _ = {
         }
 
         //if less than lower, return false
-        if (number < lower) {
-            return false;
-        }
         //if greater than or equal to upper, return false
-        else if (number >= upper) {
+        if ((number < lower) || (number >= upper)) {
             return false;
         }
         //otherwise, it is in range
@@ -36,8 +33,11 @@ const _ = {
             return true;
         }
 
-        
+    },
 
+    //return array of words from text separated by a space
+    words(text) {
+        return text.split(" ");
     }
 
 };
